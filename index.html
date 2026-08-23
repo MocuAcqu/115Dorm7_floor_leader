@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115學年度學七舍樓長介紹</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 FontAwesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 電梯開場動畫層 -->
+    <div id="elevator-screen">
+        <div class="elevator-display">
+            <span id="floor-number">1</span> 樓
+        </div>
+        <div class="elevator-doors">
+            <div class="door left-door"></div>
+            <div class="door right-door"></div>
+        </div>
+        <button id="enter-btn"><i class="fa-solid fa-water"></i> 點擊搭乘電梯上樓！</button>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <header>
+            <div class="logo-container">
+                <img src="logo.jpg" alt="宿舍LOGO" class="dorm-logo" onerror="this.style.display='none'">
+            </div>
+            <h1>115學年度學七舍<br>樓長介紹</h1>
+        </header>
+
+        <!-- 樓長選擇與介紹區塊 -->
+        <section class="wardens-section">
+            <h2><i class="fa-solid fa-compass"></i> 尋找你的樓長</h2>
+            
+            <!-- 樓長按鈕導航 -->
+            <div class="warden-tabs">
+                <button class="tab-btn active" data-target="warden-1">劉祐豪</button>
+                <button class="tab-btn" data-target="warden-2">林冠廷</button>
+                <button class="tab-btn" data-target="warden-3">林宜宣</button>
+                <button class="tab-btn" data-target="warden-4">呂伊綾</button>
+            </div>
+
+            <!-- 樓長詳細資料內容 -->
+            <div class="warden-content-container">
+                <!-- 劉祐豪 -->
+                <div class="warden-card active" id="warden-1">
+                    <div class="warden-img">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="樓長照片">
+                    </div>
+                    <div class="warden-info">
+                        <h3>劉祐豪</h3>
+                        <span class="title"><i class="fa-solid fa-building-user"></i> 管理樓層：2, 3, 4 樓</span>
+                        <p class="bio"><strong>自我介紹：</strong>哈囉大家好！我是祐豪，負責低樓層的日常大小事，有任何問題隨時來找我！</p>
+                        <blockquote class="message">
+                            "海洋雖大，總有避風港；宿舍有我，生活沒煩惱！"
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- 林冠廷 -->
+                <div class="warden-card" id="warden-2">
+                    <div class="warden-img">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500" alt="樓長照片">
+                    </div>
+                    <div class="warden-info">
+                        <h3>林冠廷</h3>
+                        <span class="title"><i class="fa-solid fa-building-user"></i> 管理樓層：5, 6, 7 樓</span>
+                        <p class="bio"><strong>自我介紹：</strong>嗨～我是冠廷！熱愛交朋友與戶外活動，中樓層的居民們有福囉！</p>
+                        <blockquote class="message">
+                            "像鯨魚一樣深潛學習，也別忘了浮出水面呼吸新鮮空氣！"
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- 林宜宣 -->
+                <div class="warden-card" id="warden-3">
+                    <div class="warden-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="樓長照片">
+                    </div>
+                    <div class="warden-info">
+                        <h3>林宜宣</h3>
+                        <span class="title"><i class="fa-solid fa-building-user"></i> 管理樓層：8, 9, 10 樓</span>
+                        <p class="bio"><strong>自我介紹：</strong>安安，我是宜宣。高樓層視野好，我的服務也絕對到位，歡迎來敲門交流。</p>
+                        <blockquote class="message">
+                            "站在高處看風景，更要腳踏實地過生活，大家一起加油！"
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- 呂伊綾 -->
+                <div class="warden-card" id="warden-4">
+                    <div class="warden-img">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="樓長照片">
+                    </div>
+                    <div class="warden-info">
+                        <h3>呂伊綾</h3>
+                        <span class="title"><i class="fa-solid fa-building-user"></i> 管理樓層：2, 11, 12 樓</span>
+                        <p class="bio"><strong>自我介紹：</strong>Hello! 我是伊綾，橫跨頂樓與低樓層的神祕守護者，溫柔排解大小疑難雜症。</p>
+                        <blockquote class="message">
+                            "願你在宿舍的每一天，都像在大海中自在悠遊。"
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LINE 樓群與 PDF 公告區塊 -->
+        <section class="resources-section">
+            <h2><i class="fa-solid fa-water-ladder"></i> 宿舍補給站</h2>
+            <div class="resource-grid">
+                <!-- LINE 群組 -->
+                <div class="resource-card">
+                    <i class="fa-brands fa-line line-icon"></i>
+                    <h3>各樓層 LINE 官方群組</h3>
+                    <p>第一時間獲得宿舍公告、活動宣傳與重要訊息通知！</p>
+                    <a href="學七舍公告_學七舍樓層群組.pdf" target="_blank" class="action-btn">檢視/下載 PDF 公告</a>
+                </div>
+
+                <!-- PDF 公告 -->
+                <div class="resource-card">
+                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                    <h3>各樓層住宿須知</h3>
+                    <p>查看詳細的宿舍注意事項、逃生安全說明。</p>
+                    <a href="學七舍住宿須知.pdf" target="_blank" class="action-btn">檢視/下載 PDF 公告</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 NTNU Dormitory 7. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
