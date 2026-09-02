@@ -3,18 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Serif TC', 'Noto SerifTC', sans-serif;
 }
 
 body {
-    background-color: #c6deee;
+    background-color: #e0f2fe;
     color: #1e293b;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
 }
 
-/* 明亮海洋風粒子背景層 */
 #particles-js {
     position: fixed;
     width: 100vw;
@@ -22,10 +21,10 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, #dbeafe 0%, #bae6fd 50%, #3a8bb1 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, var(--theme-color, #4a88a7) 100%);
 }
 
-/* --- 擬真鐵灰色電梯介面 --- */
+/* 擬真鐵灰色電梯介面 */
 #elevator-screen {
     position: fixed;
     top: 0;
@@ -117,9 +116,7 @@ body {
     transform: translateY(-2px);
 }
 
-.floor-key:active {
-    transform: translateY(2px);
-}
+.floor-key:active { transform: translateY(2px); }
 
 @keyframes elevatorVibration {
     0% { transform: translate(0, 0); }
@@ -156,7 +153,7 @@ body {
 
 .hidden { display: none !important; }
 
-/* --- 主要網頁內容 (明亮清新風) --- */
+/* 網頁主體 */
 header {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(15px);
@@ -169,8 +166,8 @@ header {
 
 .dorm-logo {
     width: 15rem;
-    height: 15rem;
-    border-radius: 20%;
+    height:15rem;
+    border-radius: 15%;
     object-fit: cover;
     border: 3px solid #0284c7;
     box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);
@@ -178,9 +175,9 @@ header {
     background-color: #fff;
 }
 
-header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacing: 1px; }
+header h1 { font-size: 2.5rem; margin-bottom: 8px; color: #0369a1; letter-spacing: 1px; }
+header p { color: #475569; font-size: 1rem; }
 
-/* 整合後的導航列 */
 .quick-nav {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
@@ -198,7 +195,7 @@ header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacin
 }
 
 .elevator-trigger-btn {
-    background: linear-gradient(135deg, #0284c7, #0369a1);
+    background: var(--theme-color, #0284c7);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -212,13 +209,9 @@ header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacin
     align-items: center;
     gap: 6px;
 }
-.elevator-trigger-btn:hover { transform: scale(1.05); background: linear-gradient(135deg, #0369a1, #075985); }
+.elevator-trigger-btn:hover { transform: scale(1.05); }
 
-.nav-divider {
-    width: 1px;
-    height: 25px;
-    background: rgba(0,0,0,0.1);
-}
+.nav-divider { width: 1px; height: 25px; background: rgba(0,0,0,0.1); }
 
 .nav-buttons {
     display: flex;
@@ -240,13 +233,12 @@ header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacin
 }
 
 .nav-btn.active, .nav-btn:hover {
-    background: #0284c7;
+    background: var(--theme-color, #0284c7);
     color: white;
-    border-color: #0284c7;
+    border-color: var(--theme-color, #0284c7);
     box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
 }
 
-/* 樓層展示主體容器 (明亮玻璃擬態) */
 .floor-container {
     max-width: 950px;
     margin: 40px auto;
@@ -289,10 +281,9 @@ header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacin
 
 .floor-title-banner h2 {
     font-size: 2.4rem;
-    color: var(--theme-color, #0369a1);
+    color: var(--theme-color);
 }
 
-/* 樓長資訊區塊 */
 .wardens-grid {
     display: flex;
     flex-direction: column;
@@ -300,85 +291,93 @@ header h1 { font-size: 2.2rem; margin-bottom: 3px; color: #0369a1; letter-spacin
     margin-bottom: 35px;
 }
 
+/* 樓長卡片主體 */
 .warden-box {
     display: flex;
     gap: 25px;
-    background: rgba(240, 249, 255, 0.7);
-    padding: 22px;
-    border-radius: 15px;
-    border: 1px solid rgba(2, 132, 199, 0.1);
-    border-left: 5px solid var(--theme-color, #0284c7);
-    align-items: center;
+    background: var(--warden-bg);
+    padding: 25px;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 25px var(--warden-shadow);
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s;
 }
-.warden-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
-}
+.warden-box:hover { transform: translateY(-3px); }
 
-.warden-box img {
-    width: 150px;
-    height: 150px;
+/* 去背圖片貼紙樣式 (Sticker Image) */
+.sticker-img {
+    position: absolute;
+    width: 5.5rem; 
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+/* 讓不同位置的貼紙有各自的錯落角度與座標 */
+.sticker-img:nth-child(1) { top: 185px; left: 22%; transform: rotate(-10deg); }
+.sticker-img:nth-child(2) { top: 12px; right: 20px; transform: rotate(6deg);  }
+
+.warden-box img.avatar {
+    width: 15rem;
+    height: 15rem;
     border-radius: 20%;
     object-fit: cover;
-    border: 3px solid var(--theme-color, #0284c7);
-    box-shadow: 0 0 15px rgba(2, 132, 199, 0.2);
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+
+.warden-desc {
+    z-index: 1;
+    flex: 1;
 }
 
 .warden-desc h3 { font-size: 1.6rem; color: #0f172a; }
 .warden-desc .w-title {
     display: inline-block;
-    background: var(--theme-color, #0284c7);
-    color: white;
-    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1e293b;
+    padding: 3px 10px;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
     margin: 6px 0;
-}
-.warden-desc p { margin: 8px 0; color: #334155; line-height: 1.6; }
-.warden-desc blockquote {
-    background: rgba(2, 132, 199, 0.05);
-    padding: 10px 15px;
-    border-left: 3px solid #0284c7;
-    font-style: italic;
-    color: #0369a1;
-    margin-top: 10px;
-    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.bio-container {
-    position: relative;
-    margin: 8px 0;
-}
+/* 自傳文字折疊效果 */
+.bio-container { position: relative; margin: 8px 0; }
 .bio-text {
-    color: #334155;
+    color: #1e293b;
     line-height: 1.6;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* 預設顯示 3 行 */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     transition: max-height 0.3s ease;
 }
-.bio-text.expanded {
-    -webkit-line-clamp: unset;
-}
+.bio-text.expanded { -webkit-line-clamp: unset; }
 .read-more-btn {
-    background: none;
+    background: rgba(255,255,255,0.7);
     border: none;
-    color: #0284c7;
+    color: #0f172a;
     font-weight: bold;
     cursor: pointer;
     margin-top: 4px;
-    font-size: 0.9rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
 }
-.read-more-btn:hover { text-decoration: underline; }
+.read-more-btn:hover { background: white; }
 
-/* 給住宿生的話：伸縮摺疊畫面 (Accordion) */
-message-accordion {
+/* 給住宿生的話 手風琴 */
+.message-accordion {
     margin-top: 12px;
-    background: rgba(2, 132, 199, 0.05);
-    border: 1px solid rgba(2, 132, 199, 0.15);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -390,55 +389,29 @@ message-accordion {
     border: none;
     text-align: left;
     font-weight: bold;
-    color: #0369a1;
+    color: #0f172a;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.accordion-header i {
-    transition: transform 0.3s;
-}
+.accordion-header i { transition: transform 0.3s; }
 
 .accordion-content {
     max-height: 0;
-    overflow-y: auto; /* 超出高度時顯示滾輪 */
+    overflow-y: auto;
     transition: max-height 0.4s ease-in-out, padding 0.3s ease;
     padding: 0 15px;
     font-style: italic;
-    color: #0f172a;
-    background: rgba(255,255,255,0.5);
-    
-    /* 美化滾輪 (支援 Chrome, Edge, Safari) */
+    color: #1e293b;
+    background: rgba(255, 255, 255, 0.8);
     scrollbar-width: thin;
-    scrollbar-color: #0284c7 #bae6fd;
 }
-
-/* 自定義 Webkit 滾輪樣式 */
-.accordion-content::-webkit-scrollbar {
-    width: 6px;
-}
-.accordion-content::-webkit-scrollbar-track {
-    background: rgba(186, 230, 253, 0.5);
-    border-radius: 4px;
-}
-.accordion-content::-webkit-scrollbar-thumb {
-    background: #0284c7;
-    border-radius: 4px;
-}
-.accordion-content::-webkit-scrollbar-thumb:hover {
-    background: #0369a1;
-}
-
 .message-accordion.active .accordion-content {
-    max-height: 240px; /* 設定展開時的最大高度，超出就會出現滾輪 */
+    max-height: 120px;
     padding: 10px 15px 15px 15px;
 }
-
-.message-accordion.active .accordion-header i {
-    transform: rotate(180deg);
-}
+.message-accordion.active .accordion-header i { transform: rotate(180deg); }
 
 /* 樓層資源與QR Code */
 .floor-resources {
@@ -451,13 +424,8 @@ message-accordion {
     border: 1px solid rgba(2, 132, 199, 0.1);
 }
 
-.qr-box, .notice-box {
-    text-align: center;
-}
-
-.qr-box h3, .notice-box h3 {
-    color: #0f172a;
-}
+.qr-box, .notice-box { text-align: center; }
+.qr-box h3, .notice-box h3 { color: #0f172a; }
 
 .qr-box img {
     width: 130px;
@@ -493,36 +461,124 @@ message-accordion {
     margin-top: 8px;
     box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
 }
-.pdf-btn:hover { opacity: 0.9; transform: scale(1.04); background: var(--theme-color, #0369a1); }
+.pdf-btn:hover { opacity: 0.9; transform: scale(1.04); }
 
 footer {
     text-align: center;
     padding: 30px;
-    background-color: #cbd5e1;
-    color: #475569;
+    background-color: #5f5f5f;
+    color: #cacbcc;
     font-size: 0.9rem;
     margin-top: 60px;
     border-top: 1px solid #94a3b8;
 }
 
-/* RWD 手機版調整 */
+.tarot-egg-btn {
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 8px;
+    padding: 5px 12px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3);
+    transition: 0.2s;
+}
+.tarot-egg-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #6d28d9, #9333ea);
+}
+
+#tarot-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 5, 20, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#tarot-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tarot-modal-content {
+    background: linear-gradient(145deg, #2e1065, #1e1b4b);
+    border: 2px solid #a855f7;
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+    color: #f3e8ff;
+    position: relative;
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 彈跳視窗內的圖片置中與排版 */
+.tarot-modal-img {
+    width: 12rem;      /* 圖片大小，可依需求調整 */
+    height: 12rem;
+    object-fit: contain;
+    margin: 0 auto 15px auto; /* 左右自動置中，下方留白 */
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.6));
+}
+
+.tarot-modal-content h2 {
+    font-size: 1.8rem;
+    color: #c084fc;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+}
+
+.tarot-modal-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e9d5ff;
+    margin-bottom: 25px;
+}
+
+.close-modal-btn {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    transition: 0.2s;
+}
+.close-modal-btn:hover { transform: scale(1.05); }
+
 @media (max-width: 768px) {
-    .quick-nav {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-    .nav-divider {
-        display: none;
-    }
-    .warden-box {
-        flex-direction: column;
-        text-align: center;
-    }
-    .floor-resources {
-        grid-template-columns: 1fr;
-    }
-    .notice-box p {
-        text-align: center;
-    }
+    .quick-nav { flex-direction: column; gap: 12px; padding: 10px; }
+    .nav-divider { display: none; }
+    .warden-box { flex-direction: column; text-align: left; align-items: center; }
+    .floor-resources { grid-template-columns: 1fr; }
+    .notice-box p { text-align: center; }
+    .sticker-img:nth-child(2) { top: 15px; right: 3%; transform: rotate(6deg); }
+    .sticker-img:nth-child(1) { top: 200px; left: 5%; transform: rotate(-10deg); }
+    .nav-buttons { max-width: 300px; margin-bottom: 1rem }
 }
