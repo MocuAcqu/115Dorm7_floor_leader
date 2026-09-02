@@ -153,11 +153,9 @@ function switchFloor(targetFloor) {
     data.wardens.forEach((w, index) => {
         const profile = wardenProfiles[w.name] || { bg: "#ffffff", shadow: "rgba(0,0,0,0.1)", stickers: [] };
         
-        // 產生貼紙圖片 HTML
         let stickersHtml = '';
         profile.stickers.forEach(imgName => {
-            // 假設圖片放在跟 html 同一層，如果有開資料夾可改成 `images/${imgName}`
-            stickersHtml += `<img src="${imgName}" class="sticker-img" alt="貼紙裝飾" onerror="this.style.display='none'">`;
+            stickersHtml += `<img src="${imgName}" class="sticker-img" alt="貼紙裝飾" loading="lazy" onerror="this.style.display='none'">`;
         });
 
         const isLongBio = w.bio.length > 55;
@@ -170,7 +168,7 @@ function switchFloor(targetFloor) {
         wardensHtml += `
             <div class="warden-box" style="--warden-bg: ${profile.bg}; --warden-shadow: ${profile.shadow};">
                 ${stickersHtml}
-                <img src="${w.img}" alt="${w.name}" class="avatar">
+                <img src="${w.img}" alt="${w.name}" class="avatar" loading="lazy">
                 <div class="warden-desc">
                     <h3>${w.name}</h3>
                     <span class="w-title"><i class="fa-solid fa-id-badge"></i> ${w.title}</span>

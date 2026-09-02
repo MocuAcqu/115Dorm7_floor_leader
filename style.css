@@ -315,6 +315,8 @@ header p { color: #475569; font-size: 1rem; }
     pointer-events: none;
     z-index: 2;
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+    min-width: 40px;
+    min-height: 40px;
 }
 /* 讓不同位置的貼紙有各自的錯落角度與座標 */
 .sticker-img:nth-child(1) { top: 185px; left: 22%; transform: rotate(-10deg); }
@@ -328,6 +330,7 @@ header p { color: #475569; font-size: 1rem; }
     border: 4px solid white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     z-index: 1;
+    background: linear-gradient(135deg, #cbd5e1, #94a3b8);
 }
 
 .warden-desc {
