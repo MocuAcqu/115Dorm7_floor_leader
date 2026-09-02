@@ -578,7 +578,10 @@ footer {
     .warden-box { flex-direction: column; text-align: left; align-items: center; }
     .floor-resources { grid-template-columns: 1fr; }
     .notice-box p { text-align: center; }
-    .sticker-img:nth-child(2) { top: 15px; right: 3%; transform: rotate(6deg); }
-    .sticker-img:nth-child(1) { top: 200px; left: 5%; transform: rotate(-10deg); }
-    .nav-buttons { max-width: 300px; margin-bottom: 1rem }
+    .sticker-img:nth-child(2) { top: 15px; right: 2%; transform: rotate(6deg); }
+    .sticker-img:nth-child(1) { top: 200px; left: 2%; transform: rotate(-10deg); }
+    .nav-buttons { max-width: 320px; margin-bottom: 1rem }
+    .dorm-logo { width: 10rem; height:10rem;}
+    .header h1 { font-size: 1.9rem;}
+    .floor-title-banner h2 { font-size: 1.8rem; color: var(--theme-color);}
 }

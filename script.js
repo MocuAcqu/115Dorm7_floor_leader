@@ -199,7 +199,7 @@ function switchFloor(targetFloor) {
     area.innerHTML = `
         <div class="floor-detail-card">
             <div class="floor-title-banner">
-                <h2><i class="fa-solid fa-building"></i> ${data.title}</h2>
+                <h2> ${data.title}</h2>
             </div>
             
             <div class="wardens-grid">
@@ -226,8 +226,6 @@ function switchFloor(targetFloor) {
             </div>
         </div>
     `;
-
-    window.scrollTo({ top: 250, behavior: 'smooth' });
 }
 
 function openTarotModal() {
