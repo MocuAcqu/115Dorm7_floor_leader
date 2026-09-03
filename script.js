@@ -7,12 +7,12 @@ const wardenProfiles = {
     "呂伊綾": {
         bg: "linear-gradient(135deg, #fce7f3 0%, #eeb6d6 100%)", // 淡粉色調柔和漸層
         shadow: "rgba(236, 72, 153, 0.2)",
-        stickers: ["volleyball.png", "flower.png", ]
+        stickers: ["volleyball.png", "flower.jpg", ]
     },
     "林宜宣": {
         bg: "linear-gradient(135deg, #ffedd5 0%, #feccaa 100%)", // 粉橘色調柔和漸層
         shadow: "rgba(249, 115, 22, 0.2)",
-        stickers: ["sushi.png", "tabletennis.png", ]
+        stickers: ["sushi.jpg", "tabletennis.jpg", ]
     },
     "林冠廷": {
         bg: "linear-gradient(135deg, #e0f2fe55 0%, #24b1fd88 100%)", // 水藍色調柔和漸層
